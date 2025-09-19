@@ -28,7 +28,7 @@ const InhouseServices = () => {
         <section className="bg-gradient-to-r from-pink-600 via-white to-pink-600 py-12">
             <div className="max-w-7xl mx-auto px-4">
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-8 text-center">
-                    WMG Inhouse Services
+                    Wedding Spot Inhouse Services
                 </h2>
 
                 <div className="grid md:grid-cols-2 gap-8">

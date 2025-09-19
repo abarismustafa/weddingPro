@@ -185,7 +185,7 @@ const SignUp = () => {
             </div>
 
             {/* Signup Card */}
-            <div className="relative w-full max-w-lg bg-pink-600 p-8 rounded-lg shadow-lg z-10">
+            <div className="relative w-full max-w-lg bg-pink-600 p-8 rounded-lg shadow-lg z-10 mt-20">
                 <h2 className="text-3xl font-bold text-center text-white mb-6">
                     SIGNUP
                 </h2>

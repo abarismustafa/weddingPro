@@ -25,7 +25,7 @@ const Banner = () => {
     ];
 
     return (
-        <section className="relative mt-16">
+        <section className="relative mt-22">
             <Swiper
                 modules={[Autoplay, EffectFade, Navigation]}
                 autoplay={{ delay: 4000 }}
