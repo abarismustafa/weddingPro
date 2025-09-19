@@ -5,6 +5,10 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import PopularSearches from "./popularSearches/PopularSearches";
 import WeddingCategory from "./weddingCategory/WeddingCategory";
+import InhouseServices from "./inhouseServices/InhouseServices";
+import RealWeddingStories from "./realWeddingStories/RealWeddingStories";
+import GalleryLook from "./galleryLook/GalleryLook";
+import LatestBlog from "./latestBlog/LatestBlog";
 
 
 const HomeMain = () => {
@@ -14,6 +18,10 @@ const HomeMain = () => {
             <PopulorVennue />
             <PopularSearches />
             <WeddingCategory />
+            <InhouseServices />
+            <RealWeddingStories />
+            <GalleryLook />
+            <LatestBlog />
         </>
     )
 }

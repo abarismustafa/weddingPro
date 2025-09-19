@@ -15,7 +15,9 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 w-full bg-pink-600 shadow z-50">
       <div className="container mx-auto flex items-center justify-between py-6 px-6">
-        <div className="text-2xl font-serif text-white">Wedding Spot</div>
+        <div className="text-2xl font-serif text-white">
+          <a href="/">Wedding Spot</a>
+        </div>
 
         {/* Desktop Menu (centered) */}
         <nav className="hidden md:flex space-x-8 font-medium text-white text-xl mx-auto">
@@ -72,7 +74,7 @@ const Header = () => {
         </nav>
 
         <div className="flex space-x-4">
-            
+
           <Link href="/login">
             <button className="bg-black text-white px-4 py-2 rounded cursor-pointer font-medium">Login</button>
           </Link>
