@@ -1,4 +1,3 @@
-// src/data/menuData.js
 
 export const navMenus = [
   {
@@ -34,18 +33,20 @@ export const navMenus = [
         },
       ],
       images: [
-        { name: "Goa", img: "assets/images/goa.jpg" },
-        { name: "Jaipur", img: "assets/images/jaipur.jpg" },
-        { name: "Udaipur", img: "assets/images/udaipur.jpg" },
-        { name: "Jodhpur", img: "assets/images/jodhpur.jpg" },
-        { name: "Thailand", img: "assets/images/thailand.jpg" },
-        { name: "Jim Corbett", img: "assets/images/jim-corbett.jpg" },
+        { name: "Goa", img: "//assets/images/goa.jpg" },
+        { name: "Jaipur", img: "//assets/images/jaipur.jpg" },
+        { name: "Udaipur", img: "/assets/images/udaipur.jpg" },
+        { name: "Jodhpur", img: "/assets/images/jodhpur.jpg" },
+        { name: "Thailand", img: "/assets/images/thailand.jpg" },
+        { name: "Jim Corbett", img: "/assets/images/jim-corbett.jpg" },
       ],
     },
   },
   
    {
   title: "Vendors",
+  path: "/vendors",
+
   dropdown: {
     columns: [
       {
@@ -247,6 +248,8 @@ title: "Photos",
   },
 {
  title: "Real Weddings",
+   path: "/realwedding",
+
     dropdown: {
       columns: [
         {
@@ -286,13 +289,14 @@ title: "Photos",
         },
       ],
       images: [
-        { name: "Shikha and James (Italy)", img: "assets/images/shikha-james-italy.jpg" },
-        { name: "Rutwika and Abhijit (Hyderabad)", img: "assets/images/rutwika-abhijit-hyderabad.jpg" },
+        { name: "Shikha and James (Italy)", img: "/assets/images/shikha-james-italy.jpg" },
+        { name: "Rutwika and Abhijit (Hyderabad)", img: "/assets/images/rutwika-abhijit-hyderabad.jpg" },
       ],
     },
   },
   {
   title: "Blog",
+  path: "/Blog",
     dropdown: {
       columns: [
         {
@@ -338,14 +342,15 @@ title: "Photos",
         },
       ],
       images: [
-        { name: "Bridal Mehendi Designs", img: "assets/images/bridal-mehendi-designs.jpg" },
-        { name: "Wedding Jewellery", img: "assets/images/wedding-jewellery.jpg" },
-        { name: "Honeymoon Hotels", img: "assets/images/honeymoon-hotels.jpg" },
+        { name: "Bridal Mehendi Designs", img: "/assets/images/bridal-mehendi-designs.jpg" },
+        { name: "Wedding Jewellery", img: "/assets/images/wedding-jewellery.jpg" },
+        { name: "Honeymoon Hotels", img: "/assets/images/honeymoon-hotels.jpg" },
       ],
     },
   },
   {
- title: "E-Invites", // Updated with dropdown
+ title: "E-Invites", 
+ path :"/einvites",
     dropdown: {
       columns: [
         {

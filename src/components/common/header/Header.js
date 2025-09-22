@@ -1,38 +1,70 @@
 "use client";
 import React, { useState } from "react";
-import { FiMenu, FiX, FiChevronDown, FiChevronUp } from "react-icons/fi";
+import {
+  FiMenu,
+  FiX,
+  FiChevronDown,
+  FiChevronUp,
+  FiUser,
+} from "react-icons/fi";
 import { navMenus } from "@/data/menuData";
-import Link from "next/link"; // Import Link from next/link
+import Link from "next/link";
 
 const Header = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
+  const [profileOpen, setProfileOpen] = useState(false);
 
   const toggleDropdown = (index) => {
     setOpenDropdown(openDropdown === index ? null : index);
   };
 
+  const profileLinks = [
+    { name: "My Orders", href: "/account/my-orders" },
+    { name: "My WishList", href: "/account/my-wishlist" },
+    { name: "My Cart", href: "/account/my-cart" },
+    { name: "My Wallet", href: "/account/my-wallet" },
+    { name: "My Product Reviews", href: "/account/my-reviews" },
+    { name: "My Earning Points", href: "/account/my-earning-points" },
+    { name: "RMA History", href: "/account/history" },
+    { name: "Sent Refund Request", href: "/account/refund-requests" },
+    { name: "My Billing Address", href: "/account/billing-address" },
+    { name: "My Shipping Address", href: "/account/shipping-address" },
+    { name: "Visit Sellers", href: "/account/visit-sellers" },
+    { name: "My Profile", href: "/account/profile" },
+    { name: "Change Password", href: "/account/change-password" },
+    { name: "Track My Order", href: "/account/track-order" },
+    { name: "Support Ticket", href: "/account/support-ticket" },
+  ];
+
   return (
     <header className="fixed top-0 left-0 w-full bg-pink-600 shadow z-50">
       <div className="container mx-auto flex items-center justify-between py-6 px-6">
-        <div className="text-2xl font-serif text-white">
-          <a href="/">Wedding Spot</a>
+        {/* Logo */}
+        <div className="text-2xl font-serif text-white ">
+          <Link href="/">Wedding Spot</Link>
         </div>
 
         {/* Desktop Menu (centered) */}
         <nav className="hidden md:flex space-x-8 font-medium text-white text-xl mx-auto">
           {navMenus.map((menu, index) => (
             <div key={index} className="group relative">
-              <button className="flex items-center gap-1">
-                {menu.title}
+              <div className="flex items-center gap-1">
+                <Link
+                  href={menu.path || "#"}
+                  className="hover:text-white-600 transition-colors"
+                >
+                  {menu.title}
+                </Link>
                 {menu.dropdown && <FiChevronDown />}
-              </button>
+              </div>
               {menu.dropdown && (
                 <div
                   className="absolute left-0 top-full hidden group-hover:grid bg-white text-gray-800 shadow-lg rounded-lg p-6 z-50 transition-all duration-200"
                   style={{
                     gridTemplateColumns: `repeat(${Math.min(
-                      menu.dropdown.columns.length + (menu.dropdown.images ? 1 : 0),
+                      menu.dropdown.columns.length +
+                        (menu.dropdown.images ? 1 : 0),
                       4
                     )}, minmax(150px, 1fr))`,
                     gap: "2rem",
@@ -41,11 +73,16 @@ const Header = () => {
                 >
                   {menu.dropdown.columns.map((col, i) => (
                     <div key={i}>
-                      <h4 className="font-semibold text-pink-600 mb-2">{col.heading}</h4>
+                      <h4 className="font-semibold text-pink-600 mb-2">
+                        {col.heading}
+                      </h4>
                       <ul className="space-y-1">
                         {col.links.map((link, j) => (
                           <li key={j}>
-                            <a href="#" className="hover:text-pink-600 transition-colors">
+                            <a
+                              href="#"
+                              className="hover:text-pink-600 transition-colors"
+                            >
                               {link}
                             </a>
                           </li>
@@ -73,14 +110,47 @@ const Header = () => {
           ))}
         </nav>
 
-        <div className="flex space-x-4">
-
+        {/* Right Side (Login, Signup, Profile) */}
+        <div className="flex space-x-4 items-center">
           <Link href="/login">
-            <button className="bg-black text-white px-4 py-2 rounded cursor-pointer font-medium">Login</button>
+            <button className="bg-black text-white px-4 py-2 rounded cursor-pointer font-medium">
+              Login
+            </button>
           </Link>
           <Link href="/signup">
-            <button className="bg-black text-white px-4 py-2 rounded cursor-pointer font-medium">Signup</button>
+            <button className="bg-black text-white px-4 py-2 rounded cursor-pointer font-medium">
+              Signup
+            </button>
           </Link>
+
+          {/* Profile Dropdown */}
+          <div className="relative">
+            <button
+              className="flex items-center gap-2 text-white font-medium"
+              onClick={() => setProfileOpen(!profileOpen)}
+            >
+              <FiUser className="text-2xl" />
+              <span>Hasan</span>
+              {profileOpen ? <FiChevronUp /> : <FiChevronDown />}
+            </button>
+
+            {profileOpen && (
+              <div className="absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-lg p-4 z-50">
+                <ul className="space-y-2">
+                  {profileLinks.map((item, i) => (
+                    <li key={i}>
+                      <Link
+                        href={item.href}
+                        className="block px-2 py-1 text-gray-700 hover:bg-pink-100 rounded"
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Mobile Menu Button */}
@@ -113,7 +183,9 @@ const Header = () => {
                 <div className="ml-4 mt-2 space-y-2">
                   {menu.dropdown.columns.map((col, j) => (
                     <div key={j}>
-                      <p className="font-semibold text-pink-600">{col.heading}</p>
+                      <p className="font-semibold text-pink-600">
+                        {col.heading}
+                      </p>
                       {col.links.map((link, k) => (
                         <a
                           href="#"
@@ -125,24 +197,29 @@ const Header = () => {
                       ))}
                     </div>
                   ))}
-                  {menu.dropdown.images && (
-                    <div className="grid grid-cols-2 gap-4 mt-2">
-                      {navMenus.map((imgItem, k) => (
-                        <div key={k} className="text-center">
-                          <img
-                            src={imgItem.img}
-                            alt={imgItem.name}
-                            className="rounded-lg shadow-md object-cover h-24 w-40"
-                          />
-                          <p className="text-sm mt-1">{imgItem.name}</p>
-                        </div>
-                      ))}
-                    </div>
-                  )}
                 </div>
               )}
             </div>
           ))}
+
+          {/* Profile Section in Mobile */}
+          <div className="mt-4 border-t pt-4">
+            <p className="font-semibold text-gray-800 mb-2">
+              Hasan&apos;s Account
+            </p>
+            <ul className="space-y-2">
+              {profileLinks.map((item, i) => (
+                <li key={i}>
+                  <Link
+                    href={item.href}
+                    className="block px-2 py-1 text-gray-700 hover:bg-pink-100 rounded"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       )}
     </header>
