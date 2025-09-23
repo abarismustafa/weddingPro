@@ -39,20 +39,20 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 w-full bg-pink-600 shadow z-50">
-      <div className="container mx-auto flex items-center justify-between py-6 px-6">
+      <div className="max-w-7xl mx-auto flex items-center justify-between py-6 px-6">
         {/* Logo */}
-        <div className="text-2xl font-serif text-white ">
+        <div className="text-2xl font-serif text-white">
           <Link href="/">Wedding Spot</Link>
         </div>
 
-        {/* Desktop Menu (centered) */}
-        <nav className="hidden md:flex space-x-8 font-medium text-white text-xl mx-auto">
+        {/* Desktop Menu */}
+        <nav className="hidden md:flex space-x-8 text-white">
           {navMenus.map((menu, index) => (
             <div key={index} className="group relative">
               <div className="flex items-center gap-1">
                 <Link
                   href={menu.path || "#"}
-                  className="hover:text-white-600 transition-colors"
+                  className="hover:underline underline-offset-4 hover:text-pink-100 transition"
                 >
                   {menu.title}
                 </Link>
@@ -60,7 +60,12 @@ const Header = () => {
               </div>
               {menu.dropdown && (
                 <div
-                  className="absolute left-0 top-full hidden group-hover:grid bg-white text-gray-800 shadow-lg rounded-lg p-6 z-50 transition-all duration-200"
+                  className={`absolute top-full hidden group-hover:grid bg-white text-gray-800 shadow-lg rounded-lg p-6 z-50 transition-all duration-200
+      ${
+        index === 0 || index === 1
+          ? "left-0"
+          : "left-1/2 transform -translate-x-1/2"
+      }`}
                   style={{
                     gridTemplateColumns: `repeat(${Math.min(
                       menu.dropdown.columns.length +
@@ -111,14 +116,14 @@ const Header = () => {
         </nav>
 
         {/* Right Side (Login, Signup, Profile) */}
-        <div className="flex space-x-4 items-center">
+        <div className="flex items-center gap-4">
           <Link href="/login">
-            <button className="bg-black text-white px-4 py-2 rounded cursor-pointer font-medium">
+            <button className="bg-white text-pink-600 px-4 py-2 rounded font-medium hover:bg-pink-100 transition">
               Login
             </button>
           </Link>
           <Link href="/signup">
-            <button className="bg-black text-white px-4 py-2 rounded cursor-pointer font-medium">
+            <button className="bg-white text-pink-600 px-4 py-2 rounded font-medium hover:bg-pink-100 transition">
               Signup
             </button>
           </Link>

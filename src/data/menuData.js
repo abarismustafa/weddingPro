@@ -33,8 +33,8 @@ export const navMenus = [
         },
       ],
       images: [
-        { name: "Goa", img: "//assets/images/goa.jpg" },
-        { name: "Jaipur", img: "//assets/images/jaipur.jpg" },
+        { name: "Goa", img: "/assets/images/goa.jpg" },
+        { name: "Jaipur", img: "/assets/images/jaipur.jpg" },
         { name: "Udaipur", img: "/assets/images/udaipur.jpg" },
         { name: "Jodhpur", img: "/assets/images/jodhpur.jpg" },
         { name: "Thailand", img: "/assets/images/thailand.jpg" },
@@ -165,6 +165,7 @@ export const navMenus = [
 
   {
 title: "Photos",
+path : "/photos",
     dropdown: {
       columns: [
         {
@@ -354,7 +355,7 @@ title: "Photos",
     dropdown: {
       columns: [
         {
-          heading: "", // No heading for a simple list
+          heading: "", 
           links: [
             "Wedding Invitation Maker",
             "Wedding Card Designs",
