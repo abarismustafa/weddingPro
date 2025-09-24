@@ -18,11 +18,11 @@ const HomeMain = () => {
       <Banner />
       <PopulorVennue />
       <PopularSearches />
-<WeddingCategory
-  categories={allCategories.slice(0, 5)}
-  showHeader={true}
-  showLink={true}
-/>      <RealWeddingStories />
+      <WeddingCategory
+        categories={allCategories.slice(0, 5)}
+        showHeader={true}
+        showLink={true}
+      />      <RealWeddingStories />
       <GalleryLook />
       <LatestBlog />
     </>

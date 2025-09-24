@@ -205,6 +205,7 @@ const Login = () => {
                             Sign in →
                         </button>
                         <Link href="/forgotPassword" className="w-full text-center block px-2 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md font-medium transition">Forgot Password ?</Link>
+                        <Link href="/registrationComplete" className="w-full text-center block px-2 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md font-medium transition">Registration Complete ?</Link>
                         {/* <button type="button" className="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md font-medium transition" onClick={SubmitDataComplete} > Registration Complete </button> */}
 
                     </form>
