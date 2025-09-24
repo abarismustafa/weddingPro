@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import Link from "next/link";
 
 const PopulorVennue = () => {
     const venues = [
@@ -56,22 +57,24 @@ const PopulorVennue = () => {
                 >
                     {venues.map((venue, i) => (
                         <SwiperSlide key={i}>
-                            <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
-                                <img
-                                    src={venue.img}
-                                    alt={venue.title}
-                                    className="w-full h-48 object-cover"
-                                />
-                                <div className="p-4">
-                                    <h3 className="font-semibold text-lg text-gray-900 truncate">
-                                        {venue.title}
-                                    </h3>
-                                    <p className="text-sm text-pink-600">{venue.cities}</p>
-                                    <a href="#" className="text-pink-500 text-sm font-medium">
-                                        More
-                                    </a>
+                            <Link href="/weddingDetails">
+                                <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+                                    <img
+                                        src={venue.img}
+                                        alt={venue.title}
+                                        className="w-full h-48 object-cover"
+                                    />
+                                    <div className="p-4">
+                                        <h3 className="font-semibold text-lg text-gray-900 truncate">
+                                            {venue.title}
+                                        </h3>
+                                        <p className="text-sm text-pink-600">{venue.cities}</p>
+                                        <a href="#" className="text-pink-500 text-sm font-medium">
+                                            More
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
+                            </Link>
                         </SwiperSlide>
                     ))}
                 </Swiper>
