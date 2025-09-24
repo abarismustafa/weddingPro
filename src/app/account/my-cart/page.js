@@ -1,10 +1,12 @@
 "use client";
 import React, { useState } from "react";
+import { useRouter } from "next/navigation"; // 👈 Add this
 import Header from "@/components/common/header/Header";
 import Footer from "@/components/common/footer/Footer";
 
 const MyCart = () => {
-  // Dummy cart items
+  const router = useRouter();
+
   const [cartItems, setCartItems] = useState([
     {
       id: 1,
@@ -45,6 +47,12 @@ const MyCart = () => {
     (sum, item) => sum + item.price * item.quantity,
     0
   );
+
+  const goToCheckout = () => {
+    // Store cart items in localStorage so checkout page can read them
+    localStorage.setItem("cartData", JSON.stringify(cartItems));
+    router.push("/account/checkout");
+  };
 
   return (
     <>
@@ -90,7 +98,9 @@ const MyCart = () => {
                       </button>
                     </div>
                   </div>
-                  <div className="font-semibold">₹{item.price * item.quantity}</div>
+                  <div className="font-semibold">
+                    ₹{item.price * item.quantity}
+                  </div>
                 </div>
               ))}
             </div>
@@ -104,7 +114,10 @@ const MyCart = () => {
               <p className="mb-4 text-sm text-gray-600">
                 Taxes and shipping calculated at checkout
               </p>
-              <button className="w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700 transition">
+              <button
+                onClick={goToCheckout}
+                className="w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700 transition"
+              >
                 Proceed to Checkout
               </button>
             </div>

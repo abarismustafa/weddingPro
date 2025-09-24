@@ -1,5 +1,5 @@
 import React from "react";
-
+import Image from "next/image";
 const VideoCards = ({ cards, onCardClick }) => {
   return (
     <div style={{ padding: "30px 0" }}>

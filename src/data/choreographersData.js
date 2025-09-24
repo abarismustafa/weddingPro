@@ -11,7 +11,7 @@ export const allChoreographers = [
     location: "Hyderabad",
     price: "₹ 30,000 onwards",
     rating: 5.0,
-    image: "/assets/images/bharatdancee.jpg", // Replace with your image path
+    image: "/assets/images/bharatdance.jpg", // Replace with your image path
   },
   {
     name: "Sandeep Steps Dance Studio",
