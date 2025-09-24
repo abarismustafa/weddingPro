@@ -2,6 +2,7 @@
 import React from "react";
 import Header from "@/components/common/header/Header";
 import Footer from "@/components/common/footer/Footer";
+import Image from "next/image";
 
 const Profile = () => {
   const user = {
