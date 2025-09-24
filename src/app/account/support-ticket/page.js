@@ -1,11 +1,14 @@
 "use client";
-
+import dynamic from "next/dynamic";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import JoditEditor from "jodit-react";
 import { FaCloudUploadAlt } from "react-icons/fa";
 import { RxCrossCircled } from "react-icons/rx";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
+// ✅ JoditEditor ko dynamically import karo
+const JoditEditor = dynamic(() => import("jodit-react"), { ssr: false });
 
 export default function SupportTicket() {
   const editor = useRef(null);
@@ -30,7 +33,7 @@ export default function SupportTicket() {
 
   const submitTicket = () => {
     const attachments = listImage.map((item) => item.url);
-    const data = { ...ticket, description: editor.current.value, attachments };
+    const data = { ...ticket, description: editor.current?.value, attachments };
     console.log("Submitted ticket:", data);
     toast.success("Support ticket submitted!");
     setTicket({
@@ -61,13 +64,11 @@ export default function SupportTicket() {
   };
 
   useEffect(() => {
-    // Fetch data for department, priority, related services here
-    // Example:
-    // setDepartData([{ _id: 1, department: "Support" }])
+    // Fetch data here if needed
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#111a27] text-white px-4 py-6">
+    <div className="min-h-screen bg-[#111a27] text-white px-4 py-6 mt-18">
       <ToastContainer />
 
       {/* Heading */}

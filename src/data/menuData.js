@@ -367,5 +367,8 @@ path : "/photos",
       images: [], // No images based on the provided image
     },
   },
-  { title: "Genie" },
+  {
+   title: "Genie" ,
+  path : "/genie",
+  }
 ];

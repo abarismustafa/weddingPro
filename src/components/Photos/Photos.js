@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Header from "@/components/common/header/Header";
 import Footer from "@/components/common/footer/Footer";
+import Image from "next/image";
 
 const categories = [
   { id: 1, name: "All Categories", img: "/assets/images/category1.jpg" },
@@ -10,7 +11,11 @@ const categories = [
   { id: 4, name: "Bridal Designs", img: "/assets/images/category4.jpg" },
   { id: 5, name: "Wedding Sarees", img: "/assets/images/rw2.jpg" },
   { id: 6, name: "Mehndi Designs", img: "/assets/banner/c3.jpg" },
-  { id: 7, name: "Wedding Jewellery", img: "/assets/images/jewelleryandaccessories.jpg" },
+  {
+    id: 7,
+    name: "Wedding Jewellery",
+    img: "/assets/images/jewelleryandaccessories.jpg",
+  },
 ];
 
 // Example photo cards data
@@ -50,7 +55,7 @@ const photoCards = [
     img: "/assets/images/rw19.jpg",
     desc: "Beautiful outdoor decor in a beach wedding",
   },
-    {
+  {
     id: 6,
     title: "Aanya and Rohit",
     location: "Mumbai",
@@ -119,7 +124,7 @@ const photoCards = [
     location: "Rishikesh",
     img: "/assets/images/rw9.jpg",
     desc: "Adventure-themed pre-wedding shoot on riverbank",
-  }
+  },
 ];
 
 const Photos = () => {
@@ -164,11 +169,14 @@ const Photos = () => {
               key={cat.id}
               className="flex-shrink-0 w-32 text-center cursor-pointer rounded-lg border hover:shadow-md transition"
             >
-              <img
-                src={cat.img}
+              <Image
+                src={cat.img} // directly use cat.img
                 alt={cat.name}
+                width={128}
+                height={96}
                 className="w-full h-24 object-cover rounded-t-lg"
               />
+
               <p className="py-2 text-sm font-medium">{cat.name}</p>
             </div>
           ))}

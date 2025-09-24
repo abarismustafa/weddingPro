@@ -28,3 +28,19 @@ body {
 .group:hover .drop-down {
   display: block;
 }
+.spackage .h4{
+
+  font-size: 22px;
+  font-weight:600;
+  line-height: normal;
+  color: rgb(74, 74, 74);
+
+
+}
+.spackage .subHead{
+  font-size: 16px;
+  color: rgb(144, 144, 144);
+  margin: 5px 0px 20px;
+
+
+}

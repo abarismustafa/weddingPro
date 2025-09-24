@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Image from "next/image";
 
 const CardModal = ({ card, onClose }) => {
   const [title, setTitle] = useState(card.title);

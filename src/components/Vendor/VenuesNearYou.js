@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useRef, useEffect, useState } from "react";
 import { allVenues } from "@/data/venuesData"; // your data file
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";

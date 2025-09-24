@@ -3,6 +3,7 @@ import React from "react";
 import Header from "@/components/common/header/Header";
 import Footer from "@/components/common/footer/Footer";
 import { FaStar, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
+import Image from "next/image";
 
 const VisitSeller = () => {
   // Example seller data (later connect with API)
