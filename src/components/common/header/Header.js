@@ -39,7 +39,7 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 w-full bg-pink-600 shadow z-50">
-      <div className="max-w-7xl mx-auto flex items-center justify-between py-6 px-6">
+      <div className="max-w-7xl mx-auto flex items-center justify-between py-6 px-5">
         {/* Logo */}
         <div className="text-2xl font-serif text-white">
           <Link href="/">Wedding Spot</Link>

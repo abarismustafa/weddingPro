@@ -58,23 +58,23 @@ const PopulorVennue = () => {
                     {venues.map((venue, i) => (
                         <SwiperSlide key={i}>
                             <Link href="/weddingDetails">
-                                <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
-                                    <img
-                                        src={venue.img}
-                                        alt={venue.title}
-                                        className="w-full h-48 object-cover"
-                                    />
-                                    <div className="p-4">
-                                        <h3 className="font-semibold text-lg text-gray-900 truncate">
-                                            {venue.title}
-                                        </h3>
-                                        <p className="text-sm text-pink-600">{venue.cities}</p>
-                                        <a href="#" className="text-pink-500 text-sm font-medium">
-                                            More
-                                        </a>
-                                    </div>
-                                </div>
-                            </Link>
+  <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+    <img
+      src={venue.img}
+      alt={venue.title}
+      className="w-full h-48 object-cover"
+    />
+    <div className="p-4">
+      <h3 className="font-semibold text-lg text-gray-900 truncate">
+        {venue.title}
+      </h3>
+      <p className="text-sm text-pink-600">{venue.cities}</p>
+      <span className="text-pink-500 text-sm font-medium cursor-pointer">
+        More
+      </span>
+    </div>
+  </div>
+</Link>
                         </SwiperSlide>
                     ))}
                 </Swiper>
