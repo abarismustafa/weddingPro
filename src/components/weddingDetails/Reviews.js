@@ -2,9 +2,12 @@
 
 import { useState } from "react";
 import { Star } from "lucide-react";
+import UploadModal from "./ModalReview/ModalReview";
 
 const Reviews = () => {
     const [rating, setRating] = useState(0);
+
+    const [open, setOpen] = useState(false);
 
     return (
         <div className="container bg-white rounded-lg shadow-md p-4 md:p-6">
@@ -93,7 +96,7 @@ const Reviews = () => {
                     />
 
                     <div className="flex items-center justify-between">
-                        <button className="px-4 py-2 text-sm border rounded-md">
+                        <button type="button" className="px-4 py-2 text-sm border rounded-md" onClick={() => setOpen(true)}>
                             Add Photos
                         </button>
                         <button className="px-6 py-2 text-sm bg-pink-500 text-white rounded-md hover:bg-pink-600">
@@ -140,6 +143,7 @@ const Reviews = () => {
                     </div>
                 </div>
             </div>
+            <UploadModal isOpen={open} onClose={() => setOpen(false)} />
         </div>
     );
 };
