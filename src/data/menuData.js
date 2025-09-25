@@ -2,6 +2,7 @@
 export const navMenus = [
   {
     title: "Venues",
+    path: "/venues",
     dropdown: {
       columns: [
         {
@@ -42,130 +43,130 @@ export const navMenus = [
       ],
     },
   },
-  
-   {
-  title: "Vendors",
-  path: "/vendors",
-
-  dropdown: {
-    columns: [
-      {
-        heading: "Photographers",
-        links: [
-          "Photographers",
-        ],
-      },
-      {
-        heading: "Makeup",
-        links: [
-          "Bridal Makeup",
-          "Family Makeup", 
-        ],
-      },
-      {
-        heading: "Planning & Decor",
-        links: [
-          "Wedding Planners",
-          "Decorators",
-        ],
-      },
-      {
-        heading: "Virtual Planning",
-        links: [
-          "Virtual Planning", 
-        ],
-      },
-      {
-        heading: "Mehndi",
-        links: [
-          "Mehendi Artist",
-        ],
-      },
-      {
-        heading: "Music & Dance",
-        links: [
-          "DJs",
-          "Sangeet Choreographer",
-          "Wedding Entertainment",
-        ],
-      },
-      {
-        heading: "Invites & Gifts",
-        links: [
-          "Invitations",
-          "Favors",
-          "Trousseau Packers",
-          "Invitation Gifts",
-          "Mehndi Favors",
-          "View All Invites & Gifts",
-        ],
-      },
-      {
-        heading: "Food",
-        links: [
-          "Catering Services",
-          "Cake",
-          "Chaat & Food Stalls",
-          "Bartenders",
-          "View All Food",
-        ],
-      },
-      {
-        heading: "Pre Wedding Shoot",
-        links: [
-          "Pre Wedding Shoot Locations",
-          "Pre Wedding Photographers",
-        ],
-      },
-      {
-        heading: "Bridal Wear",
-        links: [
-          "Bridal Lehengas",
-          "Kanjeevaram / Silk Sarees",
-          "Cocktail Gowns",
-          "Trousseau Sarees",
-          "Bridal Lehenga on Rent",
-          "View All Bridal Wear",
-        ],
-      },
-      {
-        heading: "Groom Wear",
-        links: [
-          "Sherwani",
-          "Wedding Suits / Tuxes",
-          "Sherwani On Rent",
-          "View All Groom Wear",
-        ],
-      },
-      {
-        heading: "Jewellery & Accessories",
-        links: [
-          "Jewellery",
-          "Flower Jewellery",
-          "Bridal Jewellery on Rent",
-          "Accessories",
-          "View All Jewellery & Accessories",
-        ],
-      },
-      {
-        heading: "Pandits",
-        links: [
-          "Wedding Pandits",
-        ],
-      },
-      {
-        heading: "Bridal Grooming",
-        links: [
-          "Beauty and Wellness",
-        ],
-      },
-    ],
-  },
-},
 
   {
-title: "Photos",
-path : "/photos",
+    title: "Vendors",
+    path: "/vendors",
+
+    dropdown: {
+      columns: [
+        {
+          heading: "Photographers",
+          links: [
+            "Photographers",
+          ],
+        },
+        {
+          heading: "Makeup",
+          links: [
+            "Bridal Makeup",
+            "Family Makeup",
+          ],
+        },
+        {
+          heading: "Planning & Decor",
+          links: [
+            "Wedding Planners",
+            "Decorators",
+          ],
+        },
+        {
+          heading: "Virtual Planning",
+          links: [
+            "Virtual Planning",
+          ],
+        },
+        {
+          heading: "Mehndi",
+          links: [
+            "Mehendi Artist",
+          ],
+        },
+        {
+          heading: "Music & Dance",
+          links: [
+            "DJs",
+            "Sangeet Choreographer",
+            "Wedding Entertainment",
+          ],
+        },
+        {
+          heading: "Invites & Gifts",
+          links: [
+            "Invitations",
+            "Favors",
+            "Trousseau Packers",
+            "Invitation Gifts",
+            "Mehndi Favors",
+            "View All Invites & Gifts",
+          ],
+        },
+        {
+          heading: "Food",
+          links: [
+            "Catering Services",
+            "Cake",
+            "Chaat & Food Stalls",
+            "Bartenders",
+            "View All Food",
+          ],
+        },
+        {
+          heading: "Pre Wedding Shoot",
+          links: [
+            "Pre Wedding Shoot Locations",
+            "Pre Wedding Photographers",
+          ],
+        },
+        {
+          heading: "Bridal Wear",
+          links: [
+            "Bridal Lehengas",
+            "Kanjeevaram / Silk Sarees",
+            "Cocktail Gowns",
+            "Trousseau Sarees",
+            "Bridal Lehenga on Rent",
+            "View All Bridal Wear",
+          ],
+        },
+        {
+          heading: "Groom Wear",
+          links: [
+            "Sherwani",
+            "Wedding Suits / Tuxes",
+            "Sherwani On Rent",
+            "View All Groom Wear",
+          ],
+        },
+        {
+          heading: "Jewellery & Accessories",
+          links: [
+            "Jewellery",
+            "Flower Jewellery",
+            "Bridal Jewellery on Rent",
+            "Accessories",
+            "View All Jewellery & Accessories",
+          ],
+        },
+        {
+          heading: "Pandits",
+          links: [
+            "Wedding Pandits",
+          ],
+        },
+        {
+          heading: "Bridal Grooming",
+          links: [
+            "Beauty and Wellness",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    title: "Photos",
+    path: "/photos",
     dropdown: {
       columns: [
         {
@@ -247,9 +248,9 @@ path : "/photos",
       ],
     },
   },
-{
- title: "Real Weddings",
-   path: "/realwedding",
+  {
+    title: "Real Weddings",
+    path: "/realwedding",
 
     dropdown: {
       columns: [
@@ -296,8 +297,8 @@ path : "/photos",
     },
   },
   {
-  title: "Blog",
-  path: "/Blog",
+    title: "Blog",
+    path: "/Blog",
     dropdown: {
       columns: [
         {
@@ -350,12 +351,12 @@ path : "/photos",
     },
   },
   {
- title: "E-Invites", 
- path :"/einvites",
+    title: "E-Invites",
+    path: "/einvites",
     dropdown: {
       columns: [
         {
-          heading: "", 
+          heading: "",
           links: [
             "Wedding Invitation Maker",
             "Wedding Card Designs",
@@ -368,7 +369,7 @@ path : "/photos",
     },
   },
   {
-   title: "Genie" ,
-  path : "/genie",
+    title: "Genie",
+    path: "/genie",
   }
 ];
