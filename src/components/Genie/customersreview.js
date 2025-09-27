@@ -42,7 +42,7 @@ function Customersreview() {
           color: "#333",
         }}
       >
-        Let them speak for us!
+        Let them speak for Us!
       </div>
       <div
         style={{
