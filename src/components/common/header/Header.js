@@ -39,17 +39,19 @@ const Header = () => {
   ];
 
   const dashboardLinks = [
+    { name: "Dashboard", href: "/dashboards/dashboard" },
     { name: "vCards", href: "/Dashboard/vcards" },
-    { name: "WhatsApp Stores", href: "/dashboard/stores" },
-    { name: "Google Wallet", href: "/dashboard/wallet" },
-    { name: "WhatsApp Product Orders", href: "/dashboard/product-orders" },
-    { name: "Inquiries", href: "/dashboard/inquiries" },
-    { name: "Appointments", href: "/dashboard/appointments" },
-    { name: "Product Orders", href: "/dashboard/orders" },
-    { name: "Virtual Backgrounds", href: "/dashboard/virtual-backgrounds" },
-    { name: "Affiliations", href: "/dashboard/affiliations" },
-    { name: "Manage Subscription", href: "/dashboard/subscription" },
-    { name: "Storage", href: "/dashboard/storage" },
+    { name: "WhatsApp Stores", href: "/dashboards/whatsAppStores" },
+    { name: "Google Wallet", href: "/dashboards/googleWallet" },
+    { name: "WhatsApp Product Orders", href: "/dashboards/whatsAppProductOrder" },
+    { name: "Inquiries", href: "/dashboards/Inquiries" },
+    { name: "Appointments", href: "/dashboards/appointments" },
+    { name: "Product Orders", href: "/dashboards/productOrders" },
+    { name: "Virtual Backgrounds", href: "/dashboards/virtualBackgrounds" },
+    { name: "My NFC Cards", href: "/dashboards/myNFCcards" },
+    // { name: "Affiliations", href: "/dashboard/affiliations" },
+    // { name: "Manage Subscription", href: "/dashboards/dashboard" },s
+    { name: "Storage", href: "/dashboards/storage" },
   ];
 
   return (
@@ -76,15 +78,14 @@ const Header = () => {
               {menu.dropdown && (
                 <div
                   className={`absolute top-full hidden group-hover:grid bg-white text-gray-800 shadow-lg rounded-lg p-6 z-50 transition-all duration-200
-      ${
-        index === 0 || index === 1
-          ? "left-0"
-          : "left-1/2 transform -translate-x-1/2"
-      }`}
+      ${index === 0 || index === 1
+                      ? "left-0"
+                      : "left-1/2 transform -translate-x-1/2"
+                    }`}
                   style={{
                     gridTemplateColumns: `repeat(${Math.min(
                       menu.dropdown.columns.length +
-                        (menu.dropdown.images ? 1 : 0),
+                      (menu.dropdown.images ? 1 : 0),
                       4
                     )}, minmax(150px, 1fr))`,
                     gap: "2rem",

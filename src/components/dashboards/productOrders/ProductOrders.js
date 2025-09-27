@@ -1,18 +1,19 @@
 "use client"
-
 import React, { useState } from 'react'
-import { FaEye } from 'react-icons/fa'
-import { MdDelete } from "react-icons/md";
-import InquiriesDetails from './InquiriesDetails/InquiriesDetails';
+import ProductOrdersDetails from './productOrdersDetails/ProductOrdersDetails';
+import { FaEye } from 'react-icons/fa';
 
-const Inquiries = () => {
+const ProductOrders = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const inquiry = {
-        vcardName: "tiytuet",
-        name: "Rakesh samal",
-        email: "rakeshsamalofficial@gmail.com",
-        phone: "9827103552",
-        message: "Testing email",
+    const order = {
+        productName: "Blue Pet Harness and Leash Set",
+        name: "Fghh",
+        email: "ram@gmail.com",
+        phone: "9876543210",
+        paymentType: "Manually",
+        amount: "₹799.00",
+        address: "Vhhh",
+        orderedAt: "Jun 10 2025",
     };
 
     return (
@@ -21,7 +22,7 @@ const Inquiries = () => {
             <div className="mt-24 p-4">
                 <div className=" bg-white shadow-lg rounded-lg p-6">
                     <h1 className="text-2xl font-bold text-pink-600 text-center">
-                        Cards Inquiries
+                        Product Orders
                     </h1>
                 </div>
             </div>
@@ -59,33 +60,27 @@ const Inquiries = () => {
                     <table className="min-w-full bg-white">
                         <thead>
                             <tr className="text-gray-600 uppercase text-sm leading-normal bg-gray-100">
-                                <th className="py-3 px-6 text-left">VCARD NAME</th>
+                                <th className="py-3 px-6 text-left">PRODUCT NAME</th>
                                 <th className="py-3 px-6 text-left">NAME</th>
-                                <th className="py-3 px-6 text-center">EMAIL</th>
-                                <th className="py-3 px-6 text-center">PHONE</th>
-                                <th className="py-3 px-6 text-center">ATTACHMENT</th>
-                                <th className="py-3 px-6 text-center">CREATED ON
-                                </th>
-
+                                <th className="py-3 px-6 text-center">ORDERED AT</th>
+                                <th className="py-3 px-6 text-center">PAYMENT TYPE</th>
+                                <th className="py-3 px-6 text-center">AMOUNT</th>
                                 <th className="py-3 px-6 text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody className="text-gray-700 text-sm">
                             <tr className='text-center'>
-                                <td>tiytuet</td>
+                                <td>Blue Pet Harness and Leash Set</td>
                                 <td><span className="bg-indigo-600 text-white text-xs px-3 py-1 rounded-md">
-                                    Rakesh samal
+                                    Fghh
                                 </span></td>
-                                <td>rakeshsamalofficial@gmail.com</td>
-                                <td>9827103552</td>
-                                <td>N/A</td>
-                                <td>Aug 06 2025</td>
+                                <td>Jun 10 2025</td>
+                                <td>Approved</td>
+                                <td>₹799.00</td>
+
 
                                 <td className="py-4 px-4 text-center text-blue-500 flex" >
                                     <FaEye size={25} onClick={() => setIsOpen(true)} />
-
-                                    <MdDelete size={25} color='red' />
-
                                 </td>
 
                             </tr>
@@ -94,10 +89,10 @@ const Inquiries = () => {
                     </table>
                 </div>
 
-                <InquiriesDetails
+                <ProductOrdersDetails
                     isOpen={isOpen}
                     onClose={() => setIsOpen(false)}
-                    inquiry={inquiry}
+                    order={order}
                 />
 
 
@@ -106,4 +101,4 @@ const Inquiries = () => {
     )
 }
 
-export default Inquiries
+export default ProductOrders
