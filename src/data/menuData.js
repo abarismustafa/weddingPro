@@ -2,7 +2,7 @@
 export const navMenus = [
   {
     title: "Venues",
-    path: "/venues",
+    path: "/venues    ",
     dropdown: {
       columns: [
         {
