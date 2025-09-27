@@ -14,6 +14,7 @@ const Header = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const [profileOpen, setProfileOpen] = useState(false);
+  const [dashboardOpen, setDashboardOpen] = useState(false);
 
   const toggleDropdown = (index) => {
     setOpenDropdown(openDropdown === index ? null : index);
@@ -35,6 +36,20 @@ const Header = () => {
     { name: "Change Password", href: "/account/change-password" },
     { name: "Track My Order", href: "/account/track-order" },
     { name: "Support Ticket", href: "/account/support-ticket" },
+  ];
+
+  const dashboardLinks = [
+    { name: "vCards", href: "/Dashboard/vcards" },
+    { name: "WhatsApp Stores", href: "/dashboard/stores" },
+    { name: "Google Wallet", href: "/dashboard/wallet" },
+    { name: "WhatsApp Product Orders", href: "/dashboard/product-orders" },
+    { name: "Inquiries", href: "/dashboard/inquiries" },
+    { name: "Appointments", href: "/dashboard/appointments" },
+    { name: "Product Orders", href: "/dashboard/orders" },
+    { name: "Virtual Backgrounds", href: "/dashboard/virtual-backgrounds" },
+    { name: "Affiliations", href: "/dashboard/affiliations" },
+    { name: "Manage Subscription", href: "/dashboard/subscription" },
+    { name: "Storage", href: "/dashboard/storage" },
   ];
 
   return (
@@ -95,38 +110,47 @@ const Header = () => {
                       </ul>
                     </div>
                   ))}
-                  {menu.dropdown.images && (
-                    <div className="grid grid-cols-2 gap-4">
-                      {menu.dropdown.images.map((imgItem, k) => (
-                        <div key={k} className="text-center">
-                          <img
-                            src={imgItem.img}
-                            alt={imgItem.name}
-                            className="rounded-lg shadow-md object-cover h-32 w-full"
-                          />
-                          <p className="text-sm mt-1">{imgItem.name}</p>
-                        </div>
-                      ))}
-                    </div>
-                  )}
                 </div>
               )}
             </div>
           ))}
         </nav>
 
-        {/* Right Side (Login, Signup, Profile) */}
-        <div className="flex items-center gap-4">
+        {/* Right Side (Login, Dashboard, Profile) */}
+        <div className="flex items-center gap-4 relative">
           <Link href="/login">
             <button className="bg-white text-pink-600 px-4 py-2 rounded font-medium hover:bg-pink-100 transition">
               Login
             </button>
           </Link>
-          <Link href="/signup">
-            <button className="bg-white text-pink-600 px-4 py-2 rounded font-medium hover:bg-pink-100 transition">
-              Signup
+
+          {/* Dashboard Dropdown - now floating like Profile */}
+          <div className="relative">
+            <button
+              className="flex items-center gap-2 text-white font-medium"
+              onClick={() => setDashboardOpen(!dashboardOpen)}
+            >
+              <span>Dashboard</span>
+              {dashboardOpen ? <FiChevronUp /> : <FiChevronDown />}
             </button>
-          </Link>
+
+            {dashboardOpen && (
+              <div className="absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-lg p-4 z-50">
+                <ul className="space-y-2">
+                  {dashboardLinks.map((item, i) => (
+                    <li key={i}>
+                      <Link
+                        href={item.href}
+                        className="block px-2 py-1 text-gray-700 hover:bg-pink-100 rounded"
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
 
           {/* Profile Dropdown */}
           <div className="relative">
@@ -206,25 +230,6 @@ const Header = () => {
               )}
             </div>
           ))}
-
-          {/* Profile Section in Mobile */}
-          <div className="mt-4 border-t pt-4">
-            <p className="font-semibold text-gray-800 mb-2">
-              Hasan&apos;s Account
-            </p>
-            <ul className="space-y-2">
-              {profileLinks.map((item, i) => (
-                <li key={i}>
-                  <Link
-                    href={item.href}
-                    className="block px-2 py-1 text-gray-700 hover:bg-pink-100 rounded"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
       )}
     </header>
