@@ -1,4 +1,4 @@
-import VcardsPage from '@/components/Dashboard/v-card'
+import VcardsPage from '@/components/dashboards/v-card'
 import React from 'react'
 
 function Vcard() {

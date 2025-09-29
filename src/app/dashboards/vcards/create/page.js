@@ -1,4 +1,4 @@
-import NewVcardPage from '@/components/Dashboard/v-card/create-vcard'
+import NewVcardPage from '@/components/dashboards/v-card/create-vcard'
 import React from 'react'
 
 function Createpage() {

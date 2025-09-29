@@ -8,15 +8,45 @@ const templates = {
   wedding: {
     title: "Wedding Invitation",
     fields: [
-      { name: "brideName", label: "Bride's Name", type: "text", required: true },
-      { name: "groomName", label: "Groom's Name", type: "text", required: true },
-      { name: "weddingDate", label: "Wedding Date", type: "date", required: true },
-      { name: "weddingTime", label: "Wedding Time", type: "time", required: true },
+      {
+        name: "brideName",
+        label: "Bride's Name",
+        type: "text",
+        required: true,
+      },
+      {
+        name: "groomName",
+        label: "Groom's Name",
+        type: "text",
+        required: true,
+      },
+      {
+        name: "weddingDate",
+        label: "Wedding Date",
+        type: "date",
+        required: true,
+      },
+      {
+        name: "weddingTime",
+        label: "Wedding Time",
+        type: "time",
+        required: true,
+      },
       { name: "venue", label: "Venue", type: "text", required: true },
       { name: "address", label: "Address", type: "textarea", required: true },
       { name: "rsvpDate", label: "RSVP Date", type: "date", required: true },
-      { name: "rsvpContact", label: "RSVP Contact", type: "text", required: true },
-      { name: "message", label: "Special Message", type: "textarea", required: false },
+      {
+        name: "rsvpContact",
+        label: "RSVP Contact",
+        type: "text",
+        required: true,
+      },
+      {
+        name: "message",
+        label: "Special Message",
+        type: "textarea",
+        required: false,
+      },
     ],
     template: `
       <div style="text-align: center; font-family: 'Times New Roman', serif; max-width: 500px; margin: 0 auto; padding: 2rem; border: 5px double #d4af37; background: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
@@ -62,23 +92,66 @@ function Einvites() {
 
   /** Wedding card list **/
   const weddingCards = [
-    { title: "Blooming in Love", img: "https://image.wedmegood.com/e-invite-images/6f72e0ea-ccb0-42a7-aa9f-f806938d1178-cover_(1).JPEG", desc: "Beautiful floral theme wedding card", template: "wedding" },
-    { title: "Black Garden", img: "https://image.wedmegood.com/e-invite-images/380878c9-0012-4c39-8317-e18b8966efbb-cover.JPEG", desc: "Elegant black theme garden wedding", template: "wedding" },
-    { title: "Scent of Summer", img: "https://image.wedmegood.com/e-invite-images/ec553b5f-80da-4228-8ff5-7ead0cd50b73-Cover.JPEG", desc: "Bright summer vibes for your wedding", template: "wedding" },
-    { title: "Vintage Romance", img: "/assets/images/Vintage-Romance.JPG", desc: "Classic vintage style wedding card", template: "wedding" },
-    { title: "Royal Elegance", img: "/assets/images/Royal-Elegance.JPG", desc: "Luxurious royal-themed wedding invitation", template: "wedding" },
+    {
+      title: "Blooming in Love",
+      img: "https://image.wedmegood.com/e-invite-images/6f72e0ea-ccb0-42a7-aa9f-f806938d1178-cover_(1).JPEG",
+      desc: "Beautiful floral theme wedding card",
+      template: "wedding",
+    },
+    {
+      title: "Black Garden",
+      img: "https://image.wedmegood.com/e-invite-images/380878c9-0012-4c39-8317-e18b8966efbb-cover.JPEG",
+      desc: "Elegant black theme garden wedding",
+      template: "wedding",
+    },
+    {
+      title: "Scent of Summer",
+      img: "https://image.wedmegood.com/e-invite-images/ec553b5f-80da-4228-8ff5-7ead0cd50b73-Cover.JPEG",
+      desc: "Bright summer vibes for your wedding",
+      template: "wedding",
+    },
+    {
+      title: "Vintage Romance",
+      img: "/assets/images/Vintage-Romance.JPG",
+      desc: "Classic vintage style wedding card",
+      template: "wedding",
+    },
+    {
+      title: "Royal Elegance",
+      img: "/assets/images/Royal-Elegance.JPG",
+      desc: "Luxurious royal-themed wedding invitation",
+      template: "wedding",
+    },
   ];
 
   /** Video cards **/
   const videoCards = [
-    { title: "Floral Extravaganza", img: "https://image.wedmegood.com/e-invite-images/47b1ab7d-42cd-4355-b82e-a74a11517971-Floral_Extravaganza.JPEG", price: 1799, template: "wedding" },
-    { title: "We Said Yes", img: "https://image.wedmegood.com/e-invite-images/8d93892e-9f18-4421-a4e6-a4db85fa82cf-We_Said_Yes.JPEG", price: 1999, template: "wedding" },
+    {
+      title: "Floral Extravaganza",
+      img: "https://image.wedmegood.com/e-invite-images/47b1ab7d-42cd-4355-b82e-a74a11517971-Floral_Extravaganza.JPEG",
+      price: 1799,
+      template: "wedding",
+    },
+    {
+      title: "We Said Yes",
+      img: "https://image.wedmegood.com/e-invite-images/8d93892e-9f18-4421-a4e6-a4db85fa82cf-We_Said_Yes.JPEG",
+      price: 1999,
+      template: "wedding",
+    },
   ];
 
   /** Save-the-date cards **/
   const saveCards = [
-    { title: "Romantic Bliss", img: "/assets/images/Romantic-Bliss.jpg", template: "wedding" },
-    { title: "Golden Memories", img: "/assets/images/Golden-Memories.jpg", template: "wedding" },
+    {
+      title: "Romantic Bliss",
+      img: "/assets/images/Romantic-Bliss.jpg",
+      template: "wedding",
+    },
+    {
+      title: "Golden Memories",
+      img: "/assets/images/Golden-Memories.jpg",
+      template: "wedding",
+    },
   ];
 
   /** Build live preview **/
@@ -89,7 +162,10 @@ function Einvites() {
 
     // Replace all placeholders
     template.fields.forEach((field) => {
-      html = html.replace(new RegExp(`{${field.name}}`, "g"), formData[field.name] || `[${field.label}]`);
+      html = html.replace(
+        new RegExp(`{${field.name}}`, "g"),
+        formData[field.name] || `[${field.label}]`
+      );
     });
 
     // Handle message block separately
@@ -164,11 +240,16 @@ function Einvites() {
     <div className="bg-amber-600 mt-15">
       <header className="text-center py-8 text-white">
         <h1 className="text-4xl font-bold mb-2">Life Event Templates</h1>
-        <p className="text-xl opacity-90">Professional templates for life's important moments</p>
+        <p className="text-xl opacity-90">
+          Professional templates for life&apos;s important moments
+        </p>
       </header>
 
       <main className="max-w-7xl mx-auto px-4">
-        <WeddingCardsSlider cards={weddingCards} onCardClick={setSelectedCard} />
+        <WeddingCardsSlider
+          cards={weddingCards}
+          onCardClick={setSelectedCard}
+        />
         <VideoCards cards={videoCards} onCardClick={setSelectedCard} />
         <SaveTheCards cards={saveCards} onCardClick={setSelectedCard} />
 
@@ -212,7 +293,10 @@ function Einvites() {
                   {templates[selectedCard.template].fields.map((field) => (
                     <div key={field.name} className="flex flex-col">
                       <label className="font-semibold text-gray-800 mb-2">
-                        {field.label} {field.required && <span className="text-red-500">*</span>}
+                        {field.label}{" "}
+                        {field.required && (
+                          <span className="text-red-500">*</span>
+                        )}
                       </label>
                       {field.type === "textarea" ? (
                         <textarea

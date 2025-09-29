@@ -1,4 +1,4 @@
-import Staticspage from '@/components/Dashboard/v-card/Analytics'
+import Staticspage from '@/components/dashboards/v-card/Analytics'
 import React from 'react'
 
 function Statics() {

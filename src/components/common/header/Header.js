@@ -39,11 +39,12 @@ const Header = () => {
   ];
 
   const dashboardLinks = [
-    { name: "vCards", href: "/Dashboard/vcards" },
-    { name: "WhatsApp Stores", href: "/dashboard/stores" },
-    { name: "Google Wallet", href: "/dashboard/wallet" },
-    { name: "WhatsApp Product Orders", href: "/dashboard/product-orders" },
-    { name: "Inquiries", href: "/dashboard/inquiries" },
+    { name: "Cards", href: "/dashboards/vcards" },
+    { name: "Wedding Cards", href: "/dashboards/#" },
+    { name: "WhatsApp Stores", href: "/dashboards/stores" },
+    { name: "Google Wallet", href: "/dashboards/wallet" },
+    { name: "WhatsApp Product Orders", href: "/dashboards/product-orders" },
+    { name: "Inquiries", href: "/dashboards/inquiries" },
     { name: "Appointments", href: "/dashboard/appointments" },
     { name: "Product Orders", href: "/dashboard/orders" },
     { name: "Virtual Backgrounds", href: "/dashboard/virtual-backgrounds" },
